@@ -1,0 +1,33 @@
+{
+	"name": "NestJS Lab Codespace",
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"hostRequirements": {
+	   "cpus": 16,
+	   "memory": "64gb",
+	   "storage": "128gb"
+	},
+    "customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-vscode-remote.remote-containers",
+				"ms-vscode-remote.remote-ssh",
+				"ms-vscode-remote.remote-ssh-edit",
+				"ms-vscode-remote.remote-wsl",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-vscode.vscode-typescript-tslint-plugin",
+				"redhat.vscode-yaml",
+				"yzhang.markdown-all-in-one",
+				"ms-azuretools.vscode-docker",
+				"esbenp.prettier-vscode",
+				"cweijan.vscode-es-client2",
+				"ms-vscode-remote.remote-containers",
+				"GitHub.copilot",
+				"GitHub.codespaces",
+				"GitHub.vscode-pull-request-github",
+				"Prisma.prisma"
+
+			]
+		}
+	}
+}
