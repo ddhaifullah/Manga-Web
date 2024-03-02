@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';  // Import Link dari react-router-dom
+import { Link, useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../../utils/Loading';
 
@@ -7,9 +7,15 @@ const Recommendations = () => {
     const [comics, setComics] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const MAX_SYNOPSIS_LENGTH = 20;
 
+    const navigate = useNavigate();
+
     useEffect(() => {
+        const storedToken = localStorage.getItem('accessToken');
+        setIsLoggedIn(!!storedToken);
+        
         const fetchComics = async () => {
             try {
                 const response = await axios.get('https://api.jikan.moe/v4/manga?limit=16');
@@ -24,13 +30,10 @@ const Recommendations = () => {
         fetchComics();
     }, []);
 
-    const fetchRecommendations = async (mangaId) => {
-        try {
-            const response = await axios.get(`https://api.jikan.moe/v4/manga/${mangaId}/recommendations`);
-            console.log(`Recommendations for Manga ID ${mangaId}:`, response.data);
-        } catch (error) {
-            console.error('Error fetching recommendations', error);
-        }
+
+    const handleSeeMore = (mangaId) => {
+        const path = isLoggedIn ? `/manga-detail/${mangaId}` : '/login';
+        navigate(path);
     };
 
     return (
@@ -57,12 +60,9 @@ const Recommendations = () => {
                                     }
                                 </p>
                                 <div className="card-actions justify-end mt-auto">
-                                    {/* Gunakan Link untuk membuat tombol yang mengarah ke halaman tertentu */}
-                                    <Link to={`/manga-detail/${comic.mal_id}`}>
-                                        <button className="btn btn-primary text-xs underline">
-                                            See more..
-                                        </button>
-                                    </Link>
+                                    <button onClick={() => handleSeeMore(comic.mal_id)} className="btn btn-primary text-xs underline">
+                                        See more..
+                                    </button>
                                 </div>
                             </div>
                         </div>
