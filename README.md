@@ -1,18 +1,48 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/M0zt5s_I)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=14055648)
-# Final - [CP6552012510] PEMPROGRAMAN WEB LANJUT
+# Aplikasi Web dengan React.js dan Nest.js
 
+Aplikasi web ini dibangun dengan menggunakan React.js untuk frontend dan Nest.js untuk backend. Aplikasi ini menggunakan API Jikan publik untuk mendapatkan data terkait anime dan memiliki sistem login kustom yang ditangani oleh Nest.js.
 
+## Daftar Isi
+- [Fitur](#fitur)
+- [Instalasi](#instalasi)
+- [Penggunaan](#penggunaan)
+- [Dependencies](#dependencies)
+- [Berkontribusi](#berkontribusi)
+- [Lisensi](#lisensi)
 
-Buat WebApps yang menggunakan Frontend dan Backend.
+## Fitur
 
-Menggunakan minimal 2 Backend, 1 Backend dibuat sendiri, yang lain menggunakan backend public
+- **Frontend React.js:** Antarmuka yang ramah pengguna dibangun dengan React.js untuk interaksi yang mulus.
+- **Backend Nest.js:** Backend yang aman dan dapat diperluas dikembangkan dengan Nest.js.
+- **Integrasi API Jikan:** Mendapatkan data terkait anime menggunakan API Jikan publik.
+- **Otentikasi Pengguna:** Sistem login kustom diimplementasikan dengan Nest.js untuk otentikasi pengguna yang aman.
 
+## Instalasi
 
-### Catatan
-Website ini di buat menggunakan ReactJs disisis Frontend Dan NestJs di sisi Backend, untuk Backend 1 saya menggunakan API public milik `api.jikan.moe`, dan untuk Backend 2 nya saya mengguankannya sebagai untuk menghandle Fitur Login/Auth.
+1. **Klon Repository:**
+   ```bash
+   git clone https://github.com/nama-pengguna/nama-repo.git
+   cd nama-repo
+   ```
+  # Install dependencies frontend
+  ```npm install
+    cd Frontend
+    npm install
+  ```
+  # Install dependencies backend
+  ```npm install
+    cd Backend
+    npm install
+  ```
 
-Link Demo : https://manga-guweh.vercel.app/
-
-*** jika membuka link demonya, diharapkan untuk menjalankan bagian servernya terlebih dahulu sebab, yang saya deploy hanya sisi frontednya saja
-
+2. **Konfigurasi:**
+  - Setel kunci API Jikan Anda dalam file konfigurasi yang sesuai.
+  - Konfigurasi database dan pengaturan lainnya di file backend.
+3. **# Menjalankan frontend (dari dalam folder client)**
+    ```runb start
+      npm start
+    ```
+    # Menjalankan backend (dari dalam folder server)
+    ```run dev
+      npm run start:dev
+    ```
